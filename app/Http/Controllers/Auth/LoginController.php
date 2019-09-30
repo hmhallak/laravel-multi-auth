@@ -68,7 +68,7 @@ class LoginController extends Controller
             'password' => 'required|min:6'
         ]);
 
-        if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])){
+        if(Auth::guard('writer')->attempt(['email' => $request->email, 'password' => $request->password])){
             return redirect()->intended('/writer');
         }
 
